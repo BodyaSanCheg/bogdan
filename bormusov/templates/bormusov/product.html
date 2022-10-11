@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %} {{ title }} {% endblock %}
+{% block content %}
+<h1>{{ title }}</h1>
+<a class="btn btn-primary" href="{% url 'get_мanufacturer' %}" role="button">Производители</a>
+{% for item in context %}
+<div class="card">
+    <div class="card-body">
+        <h1>{{ item.name }}</h1>
+        <p>{{ item.context }}</p>
+        <p>{{ item.price }}</p>
+        <p>{{ item.weight }}</p>
+        <p>{{ item.material }}</p>
+        <p>{{ item.product_manufacturer }}</p>
+    </div>
+  </div>
+{% endfor %}
+{% endblock%}
